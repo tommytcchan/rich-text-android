@@ -38,7 +38,6 @@ import io.square1.richtext.R;
 import io.square1.richtextlib.EmbedUtils;
 import io.square1.richtextlib.spans.UrlBitmapDownloader;
 import io.square1.richtextlib.ui.RichContentView;
-import io.square1.richtextlib.ui.audio.AudioPlayer;
 import io.square1.richtextlib.ui.audio.AudioPlayerHolder;
 import io.square1.richtextlib.ui.web.WebContentHolder;
 import io.square1.richtextlib.ui.video.RichVideoView;
@@ -58,11 +57,9 @@ public class ContentAdapter extends BaseAdapter  {
     private UrlBitmapDownloader mDownloader;
 
     private ArrayList<AudioPlayerHolder> mAudioHolders;
-    private AudioPlayer mAudioPlayer;
 
     public ContentAdapter(UrlBitmapDownloader downloader, Context context){
         super();
-        mAudioPlayer = new AudioPlayer(context);
         mDownloader = downloader;
         mAudioHolders = new ArrayList<>();
     }
@@ -114,10 +111,6 @@ public class ContentAdapter extends BaseAdapter  {
             return  getImageItemView((ImageDocumentElement) item, convertView, parent);
         }
 
-        if(TYPE_AUDIO == type){
-            return getAudioEmbedView((OembedDocumentElement)item, convertView, parent);
-        }
-
         if(TYPE_EMBED == type){
             return getEmbedView((OembedDocumentElement)item, convertView, parent);
         }
@@ -164,22 +157,6 @@ public class ContentAdapter extends BaseAdapter  {
         WebContentHolder holder = (WebContentHolder) convertView.getTag();
         holder.setWebContent(item);
         return convertView;
-    }
-
-    private View getAudioEmbedView(OembedDocumentElement element, View convertView, ViewGroup parent){
-
-        if(convertView == null){
-            convertView = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.rich_text_embed_layout_media_player,
-                            parent, false);
-            AudioPlayerHolder holder = new AudioPlayerHolder(convertView,mAudioPlayer);
-            convertView.setTag(holder);
-            mAudioHolders.add(holder);
-        }
-
-        ((AudioPlayerHolder)convertView.getTag()).setAudioFile(element.getContent());
-        return convertView;
-
     }
 
     private View getVideoEmbedView(VideoDocumentElement element, View convertView, ViewGroup parent){
@@ -238,7 +215,6 @@ public class ContentAdapter extends BaseAdapter  {
 
 
     public void destroy(){
-        mAudioPlayer.onDestroy();
     }
 
     @Override

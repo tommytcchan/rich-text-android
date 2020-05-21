@@ -22,23 +22,18 @@ package io.square1.richtextlib.v2.content;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Parcel;
-import android.support.annotation.ColorInt;
+import androidx.annotation.ColorInt;
 import android.text.GetChars;
 import android.text.Layout;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import android.text.style.TtsSpan;
 
-
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 
-import io.square1.parcelable.DynamicParcelableCreator;
 import io.square1.richtextlib.spans.BackgroundColorSpan;
 import io.square1.richtextlib.spans.BoldSpan;
 import io.square1.richtextlib.spans.ForegroundColorSpan;

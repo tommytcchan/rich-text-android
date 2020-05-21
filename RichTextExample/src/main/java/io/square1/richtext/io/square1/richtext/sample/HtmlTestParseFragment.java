@@ -23,8 +23,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import androidx.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,6 +35,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.ArrayList;
 
+import androidx.fragment.app.Fragment;
 import io.square1.richtext.R;
 import io.square1.richtextlib.spans.ClickableSpan;
 import io.square1.richtextlib.spans.RemoteBitmapSpan;

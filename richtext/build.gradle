@@ -30,8 +30,8 @@ ext {
 }
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 29
+    buildToolsVersion '29.0.2'
 
     defaultConfig {
         minSdkVersion 15
@@ -58,10 +58,9 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile "org.ccil.cowan.tagsoup:tagsoup:${appLibs.TAGSOUP_VERSION}"
-    compile "com.google.android.exoplayer:exoplayer:${appLibs.ANDROID_EXOPLAYER_VERSION}"
-    compile "com.android.support:support-v4:${appLibs.ANDROID_SUPPORT_VERSION}"
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.ccil.cowan.tagsoup:tagsoup:${appLibs.TAGSOUP_VERSION}"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
 }
 

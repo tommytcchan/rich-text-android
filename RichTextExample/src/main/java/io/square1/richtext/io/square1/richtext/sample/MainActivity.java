@@ -21,15 +21,14 @@ package io.square1.richtext.io.square1.richtext.sample;
 
 
 import android.net.Uri;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v4.app.FragmentManager;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import io.square1.richtext.R;
-import io.square1.richtextlib.v2.content.RichTextDocumentElement;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks, VideoListFragment.OnListFragmentInteractionListener {
